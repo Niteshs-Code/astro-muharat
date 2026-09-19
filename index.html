@@ -1,489 +1,1739 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaam Chalu Hai | Work In Progress</title>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Primary SEO -->
+    <title>Astro Muhurat | Auspicious Muhurat & Astrology Consultation</title>
+
+    <meta
+        name="description"
+        content="Astro Muhurat provides personalized auspicious Muhurat for vehicle purchase, business commencement, house construction, marriage, C-section birth, gemstones, colors and more."
+    >
+
+    <meta
+        name="keywords"
+        content="Astro Muhurat, Muhurat, Auspicious Muhurat, Vehicle Purchase Muhurat, Business Muhurat, Marriage Muhurat, House Construction Muhurat, Astrology, Gemstone Consultation, Color Consultation"
+    >
+
+    <meta name="author" content="Astro Muhurat">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://astromuhurat.in/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Astro Muhurat | Auspicious Moments, Personalized for You">
+    <meta
+        property="og:description"
+        content="Discover personalized auspicious Muhurats calculated according to your name, birth details and planetary combinations."
+    >
+    <meta
+        property="og:image"
+        content="https://i.postimg.cc/brQ4zRZX/logo.jpg"
+    >
+    <meta property="og:url" content="https://astromuhurat.in/">
+    <meta property="og:site_name" content="Astro Muhurat">
+
+    <!-- Twitter / Social Preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Astro Muhurat | Personalized Auspicious Muhurat">
+    <meta
+        name="twitter:description"
+        content="Personalized Muhurat consultation for important moments and life events."
+    >
+    <meta
+        name="twitter:image"
+        content="https://i.postimg.cc/brQ4zRZX/logo.jpg"
+    >
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
+    <link rel="apple-touch-icon" href="assets/logo.jpeg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <style>
-        :root {
-            --bg-dark: #0d1117;
-            --blueprint-blue: #0f172a;
-            --accent-yellow: #fbbf24;
-            --accent-cyan: #38bdf8;
-            --accent-pink: #f43f5e;
-            --paper-grid: rgba(56, 189, 248, 0.08);
-        }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-dark);
-            color: #f8fafc;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-        h1, h2, h3, .fun-font {
-            font-family: 'Fredoka', cursive;
-        }
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-        /* Blueprint Animated Grid Background */
-        .blueprint-bg {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, var(--paper-grid) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--paper-grid) 1px, transparent 1px);
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 40px 40px; }
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .glass-card-glow {
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.15), inset 0 0 15px rgba(56, 189, 248, 0.1);
-        }
-
-        /* SVG Construction Drawing Animations */
-        @keyframes rotateGear {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes reverseRotateGear {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
-        }
-
-        @keyframes floatPen {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(15px, -15px) rotate(8deg); }
-            50% { transform: translate(0, -25px) rotate(-4deg); }
-            75% { transform: translate(-15px, -10px) rotate(5deg); }
-        }
-
-        @keyframes pulseBeam {
-            0%, 100% { opacity: 0.3; transform: scaleX(0.98); }
-            50% { opacity: 0.8; transform: scaleX(1.02); }
-        }
-
-        @keyframes dashDraw {
-            to { stroke-dashoffset: 0; }
-        }
-
-        .gear-rotate-cw {
-            transform-origin: center;
-            animation: rotateGear 12s linear infinite;
-        }
-
-        .gear-rotate-ccw {
-            transform-origin: center;
-            animation: reverseRotateGear 9s linear infinite;
-        }
-
-        .floating-pen {
-            animation: floatPen 6s ease-in-out infinite;
-        }
-
-        /* Blueprint Line Animation Effect */
-        .path-draw {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: dashDraw 4s ease-out forwards infinite alternate;
-        }
-
-        /* Custom Floating Particles */
-        #particles-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* Glowing Badge Animation */
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px rgba(251, 191, 36, 0.6); }
-            50% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.9); }
-        }
-
-        .badge-glow {
-            animation: pulseGlow 2s infinite;
-        }
-
-        /* Cursor Customizer */
-        .interactive-zone {
-            cursor: crosshair;
-        }
-    </style>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="blueprint-bg min-h-screen flex flex-col justify-between items-center relative px-4 py-8 overflow-x-hidden selection:bg-amber-400 selection:text-slate-900">
 
-    <canvas id="particles-canvas"></canvas>
+<body>
 
-    <!-- Background Ambient Glows -->
-    <div class="absolute top-10 left-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-    <!-- Header / Brand Tape -->
-    <header class="w-full max-w-5xl z-10 flex justify-between items-center mb-6">
-        <div class="flex items-center gap-3 bg-amber-400/10 border border-amber-400/30 px-4 py-2 rounded-full backdrop-blur-md">
-            <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
-            </span>
-            <span class="text-xs sm:text-sm font-semibold tracking-wide text-amber-300 uppercase">
-                <i class="fa-solid font-bold fa-screwdriver-wrench mr-1"></i> Site Under Construction
-            </span>
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="om-symbol">ॐ</div>
+            <span>Astro Muhurat</span>
         </div>
-
-        <div class="text-right">
-            <span class="text-xs text-slate-400 block sm:inline">Status:</span>
-            <span class="text-xs font-mono bg-sky-950 text-sky-400 border border-sky-800 px-2 py-1 rounded-md ml-1">
-                BUILD_MODE_ACTIVE
-            </span>
-        </div>
-    </header>
-
-    <main class="w-full max-w-4xl z-10 my-auto flex flex-col items-center">
-        
-        <!-- Main Glass Card Container -->
-        <div class="glass-card glass-card-glow rounded-3xl p-6 sm:p-10 w-full text-center relative overflow-hidden my-4">
-            
-            <!-- Construction Caution Stripes Bar -->
-            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-400 via-slate-800 to-amber-400 bg-[length:40px_100%]"></div>
-
-            <!-- Central Animated Illustration (SVG Blueprint & Drawing Elements) -->
-            <div class="relative w-full max-w-md mx-auto h-56 sm:h-64 flex items-center justify-center my-2 interactive-zone" id="illustration-container">
-                
-                <!-- Interactive Drawing SVG -->
-                <svg viewBox="0 0 500 300" class="w-full h-full drop-shadow-2xl overflow-visible">
-                    <!-- Blueprint Grid lines in SVG -->
-                    <defs>
-                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1"/>
-                        </pattern>
-                        <linearGradient id="gradYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fbbf24" />
-                            <stop offset="100%" stop-color="#d97706" />
-                        </linearGradient>
-                        <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#38bdf8" />
-                            <stop offset="100%" stop-color="#0284c7" />
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Blueprint Ground Box -->
-                    <rect x="50" y="40" width="400" height="220" rx="16" fill="url(#grid)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.6"/>
-
-                    <!-- Rotating Gears (Machine Work) -->
-                    <g class="gear-rotate-cw" transform-origin="120 110">
-                        <path d="M120 85 L125 95 L135 95 L128 103 L131 113 L120 107 L109 113 L112 103 L105 95 L115 95 Z" fill="#fbbf24" opacity="0.9"/>
-                        <circle cx="120" cy="110" r="16" fill="#0f172a" stroke="#fbbf24" stroke-width="3"/>
-                        <circle cx="120" cy="110" r="6" fill="#38bdf8"/>
-                    </g>
-
-                    <g class="gear-rotate-ccw" transform-origin="160 90">
-                        <circle cx="160" cy="90" r="12" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
-                        <circle cx="160" cy="90" r="4" fill="#fbbf24"/>
-                    </g>
-
-                    <!-- Animated Blueprint Crane & Building Vector -->
-                    <!-- Building Blueprint Sketch -->
-                    <rect x="220" y="110" width="110" height="130" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4"/>
-                    <!-- Building Windows Being Drawn -->
-                    <rect x="235" y="125" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" class="path-draw"/>
-                    <rect x="290" y="125" width="22" height="22" fill="none" stroke="#fbbf24" stroke-width="2" class="path-draw"/>
-                    <rect x="235" y="165" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="2" class="path-draw"/>
-                    <rect x="290" y="165" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="2" class="path-draw"/>
-
-                    <!-- Crane Arm -->
-                    <path d="M 180 240 L 180 70 L 360 70" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M 180 90 L 220 70 M 180 130 L 260 70" fill="none" stroke="#d97706" stroke-width="2"/>
-                    <!-- Crane Cable -->
-                    <line x1="330" y1="70" x2="330" y2="120" stroke="#f8fafc" stroke-width="2" stroke-dasharray="3,3"/>
-                    
-                    <!-- Hanging Construction Block -->
-                    <g transform="translate(315, 120)">
-                        <rect x="0" y="0" width="30" height="20" rx="3" fill="url(#gradYellow)"/>
-                        <text x="15" y="14" font-size="10" font-weight="bold" fill="#0f172a" text-anchor="middle">NEW</text>
-                    </g>
-
-                    <!-- Floating Architect Drawing Pencil SVG -->
-                    <g class="floating-pen">
-                        <!-- Pencil body -->
-                        <path d="M 370 110 L 420 60 L 435 75 L 385 125 Z" fill="url(#gradBlue)"/>
-                        <!-- Pencil Tip -->
-                        <path d="M 370 110 L 360 128 L 385 125 Z" fill="#fbbf24"/>
-                        <!-- Lead Point -->
-                        <path d="M 360 128 L 355 132 L 365 130 Z" fill="#f8fafc"/>
-                        <!-- Magic Sparkle Trail from pencil -->
-                        <circle cx="350" cy="135" r="3" fill="#fbbf24" opacity="0.8"/>
-                        <circle cx="340" cy="142" r="2" fill="#38bdf8" opacity="0.6"/>
-                        <circle cx="330" cy="145" r="1.5" fill="#f8fafc" opacity="0.4"/>
-                    </g>
-
-                    <!-- Drawing Measuring Ruler Accent -->
-                    <rect x="100" y="235" width="280" height="12" rx="2" fill="#1e293b" stroke="#475569" stroke-width="1"/>
-                    <line x1="120" y1="235" x2="120" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="140" y1="235" x2="140" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="160" y1="235" x2="160" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="180" y1="235" x2="180" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="200" y1="235" x2="200" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="220" y1="235" x2="220" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="240" y1="235" x2="240" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="260" y1="235" x2="260" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="280" y1="235" x2="280" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="300" y1="235" x2="300" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="320" y1="235" x2="320" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                    <line x1="340" y1="235" x2="340" y2="240" stroke="#94a3b8" stroke-width="1"/>
-                    <line x1="360" y1="235" x2="360" y2="242" stroke="#94a3b8" stroke-width="1.5"/>
-                </svg>
-
-                <!-- Click Me Floating Hint -->
-                <div class="absolute bottom-2 right-4 bg-amber-400 text-slate-900 font-bold text-xs px-3 py-1 rounded-full shadow-lg pointer-events-none animate-bounce">
-                    <i class="fa-solid fa-hand-pointer mr-1"></i> Tap Illustration!
-                </div>
-            </div>
-
-            <!-- Main Catchy Title -->
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
-                Arey Dost, <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Kaam Chalu Hai!</span> 🛠️
-            </h1>
-
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-                Hum ek dam zabardast aur shandar website design kar rahe hain. Naye drawing tools, badhiya features aur sleek look ke saath bohot jald live honge!
-            </p>
-
-            <!-- Progress Section -->
-            <div class="max-w-xl mx-auto mb-8 bg-slate-900/80 p-5 rounded-2xl border border-slate-700/60 shadow-inner">
-                <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs sm:text-sm font-bold text-sky-400 flex items-center gap-2">
-                        <i class="fa-solid fa-compass-drafting animate-spin"></i> Building Progress:
-                    </span>
-                    <span id="progress-text" class="text-xs sm:text-sm font-mono font-bold text-amber-400">78% Completed</span>
-                </div>
-
-                <!-- Animated Custom Progress Bar -->
-                <div class="w-full bg-slate-800 rounded-full h-4 p-0.5 overflow-hidden border border-slate-700 relative">
-                    <div id="progress-bar" class="bg-gradient-to-r from-amber-500 via-yellow-400 to-sky-400 h-full rounded-full transition-all duration-1000 ease-out relative w-[78%]">
-                        <!-- Shining Light Effect -->
-                        <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-center text-[11px] text-slate-400 mt-2">
-                    <span><i class="fa-solid fa-pencil text-amber-400 mr-1"></i> Wireframing & Design</span>
-                    <span><i class="fa-solid fa-code text-sky-400 mr-1"></i> Coding Magic</span>
-                    <span><i class="fa-solid fa-rocket text-emerald-400 mr-1"></i> Launch Soon</span>
-                </div>
-            </div>
-
-            <!-- Email Notify Box -->
-            <div class="max-w-md mx-auto">
-                <form id="notify-form" onsubmit="handleNotify(event)" class="flex flex-col sm:flex-row gap-2">
-                    <div class="relative flex-1">
-                        <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                        <input 
-                            type="email" 
-                            id="user-email" 
-                            required 
-                            placeholder="Apna email dalo (e.g. rahul@gmail.com)" 
-                            class="w-full pl-11 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl focus:outline-none focus:border-amber-400 text-sm text-white placeholder-slate-500 transition-all"
-                        >
-                    </div>
-                    <button 
-                        type="submit" 
-                        class="bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg hover:shadow-amber-500/20 active:scale-95 text-sm whitespace-nowrap flex items-center justify-center gap-2"
-                    >
-                        <span>Mujhe Bata Dena!</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
-                <p id="form-msg" class="text-xs mt-3 hidden"></p>
-            </div>
-
-            <!-- Highlights / Feature Pills -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 text-left">
-                <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/40 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-lg">
-                        🎨
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-200">New Design</h4>
-                        <p class="text-[11px] text-slate-400">Modern Vector Aesthetics</p>
-                    </div>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/40 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-sky-400/10 text-sky-400 flex items-center justify-center font-bold text-lg">
-                        ⚡
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-200">Super Fast</h4>
-                        <p class="text-[11px] text-slate-400">Lightweight & Smooth</p>
-                    </div>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/40 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-400/10 text-emerald-400 flex items-center justify-center font-bold text-lg">
-                        📱
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-200">100% Mobile Ready</h4>
-                        <p class="text-[11px] text-slate-400">Sabhi screens ke liye</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="w-full max-w-5xl z-10 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4 mt-4 pt-4 border-t border-slate-800/80">
-        <div>
-            &copy; <span id="year">2026</span> All rights reserved. Express Crafted with ❤️ & Blueprint precision.
-        </div>
-
-        <div class="flex items-center gap-4 text-base">
-            <a href="#" onclick="showInteractionToast('Twitter/X page coming soon!')" class="hover:text-amber-400 transition-colors" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" onclick="showInteractionToast('Instagram updates coming soon!')" class="hover:text-amber-400 transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" onclick="showInteractionToast('GitHub repo is private right now!')" class="hover:text-amber-400 transition-colors" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="#" onclick="showInteractionToast('LinkedIn connect soon!')" class="hover:text-amber-400 transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-    </footer>
-
-    <!-- Interactive Toast Alert -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border border-amber-400/40 text-slate-100 px-5 py-3 rounded-xl shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 pointer-events-none">
-        <i class="fa-solid fa-circle-info text-amber-400 text-lg"></i>
-        <span id="toast-msg" class="text-xs sm:text-sm font-medium">Notification message</span>
     </div>
 
-    <script>
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
 
-        let particlesArray = [];
-        let numberOfParticles = 40;
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+    <header class="site-header" id="siteHeader">
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        <nav class="navbar container">
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = (Math.random() - 0.5) * 0.6;
-                this.speedY = (Math.random() - 0.5) * 0.6;
-                this.color = Math.random() > 0.5 ? 'rgba(251, 191, 36, ' : 'rgba(56, 189, 248, ';
-                this.alpha = Math.random() * 0.5 + 0.2;
-            }
+            <a href="#home" class="brand">
+                <span class="brand-symbol">ॐ</span>
 
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
+                <span class="brand-text">
+                    <strong>Astro</strong>
+                    <span>Muhurat</span>
+                </span>
+            </a>
 
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
 
-            draw() {
-                ctx.fillStyle = this.color + this.alpha + ')';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        function initParticles() {
-            particlesArray = [];
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
 
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            requestAnimationFrame(animateParticles);
-        }
+            <div class="nav-menu" id="navMenu">
 
-        initParticles();
-        animateParticles();
+                <a href="#home" class="nav-link active">Home</a>
 
-        function showInteractionToast(msg) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-msg');
-            toastMsg.innerText = msg;
+                <a href="#about" class="nav-link">About</a>
 
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+                <a href="#muhurat" class="nav-link">What is Muhurat?</a>
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3500);
-        }
+                <a href="#services" class="nav-link">Services</a>
 
-        // Form Submit Handler
-        function handleNotify(event) {
-            event.preventDefault();
-            const emailInput = document.getElementById('user-email');
-            const formMsg = document.getElementById('form-msg');
-            
-            if (emailInput.value.trim() !== '') {
-                formMsg.innerText = "Shukriya! 🎉 Jab site tayar ho jayegi, sabse pehle aapko email bhej denge!";
-                formMsg.className = "text-xs mt-3 text-emerald-400 font-semibold block";
-                emailInput.value = '';
-                
-                showInteractionToast("Aapka email save ho gaya hai!");
-            }
-        }
+                <a href="#contact" class="nav-link">Contact</a>
 
-        const illustration = document.getElementById('illustration-container');
-        let currentProgress = 78;
+                <a href="#consultation" class="nav-cta">
+                    Get Muhurat
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
-        illustration.addEventListener('click', () => {
-            // Increase progress playfully up to 99%
-            if (currentProgress < 99) {
-                currentProgress += 1;
-                document.getElementById('progress-bar').style.width = currentProgress + '%';
-                document.getElementById('progress-text').innerText = currentProgress + '% Completed';
-                showInteractionToast(`Shabash! Aapne progress badha kar ${currentProgress}% kar diya! 🏗️`);
-            } else {
-                showInteractionToast("Bas thoda sa baaki hai, baaki kaam developers kar rahe hain! 😉");
-            }
-        });
+            </div>
 
-        // Dynamic Year
-        document.getElementById('year').innerText = new Date().getFullYear();
-    </script>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-pattern"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        <span></span>
+                        Auspicious Moments • Meaningful Beginnings
+                        <span></span>
+                    </span>
+
+
+                    <h1>
+                        Begin Every
+                        <span>Important Moment</span>
+                        at the Right Time.
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Discover a personalized Muhurat calculated according
+                        to your name, birth details and planetary combinations
+                        for the moments that matter most.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a href="#consultation" class="btn btn-primary">
+                            Find Your Muhurat
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="#services" class="btn btn-outline">
+                            Explore Services
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+                            <strong>25+</strong>
+                            <span>Years Experience</span>
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+                            <strong>50+</strong>
+                            <span>Astrologers</span>
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+                            <strong>1000s</strong>
+                            <span>People Served</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-symbol-card">
+
+                    <div class="symbol-ring ring-one"></div>
+                    <div class="symbol-ring ring-two"></div>
+
+                    <div class="hero-symbol">
+                        ॐ
+                    </div>
+
+                    <span class="symbol-caption">
+                        शुभारंभ
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a href="#about" class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================================
+             INTRO / ASTRO MUHURAT
+        ========================================== -->
+        <section class="section intro-section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        ASTRO MUHURAT
+                    </span>
+
+                    <h2>
+                        The Right Time Can
+                        <span>Change Everything.</span>
+                    </h2>
+
+                    <div class="heading-line"></div>
+
+                </div>
+
+
+                <div class="intro-grid">
+
+                    <div class="intro-content">
+
+                        <p class="lead-text">
+                            Muhurat is highly significant. Time is changing
+                            every moment. Some times are auspicious, while
+                            others are inauspicious.
+                        </p>
+
+                        <p>
+                            Actions performed during auspicious times yield
+                            favorable results, whereas those done in
+                            inauspicious times may bring sorrow, harm,
+                            suffering, accidents and more.
+                        </p>
+
+                        <p>
+                            Our sages discovered the science of Muhurat for
+                            human welfare by calculating time and sensing the
+                            movement of planets and constellations.
+                        </p>
+
+                        <p>
+                            Through this science, when we begin any task at an
+                            auspicious time, we seek favorable results.
+                            This calculation varies for every individual,
+                            because every person is born under different
+                            planetary combinations.
+                        </p>
+
+                        <a href="#muhurat" class="text-link">
+                            Understand Muhurat
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="intro-visual">
+
+                        <div class="mandala-card">
+
+                            <div class="mandala">
+                                <div class="mandala-circle circle-1"></div>
+                                <div class="mandala-circle circle-2"></div>
+                                <div class="mandala-circle circle-3"></div>
+                                <div class="mandala-center">ॐ</div>
+                            </div>
+
+                            <div class="mandala-label">
+                                <span>Ancient Wisdom</span>
+                                <strong>Personalized Muhurat</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             WHAT IS MUHURAT
+        ========================================== -->
+        <section class="section muhurat-section" id="muhurat">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-kicker">
+                        UNDERSTANDING MUHURAT
+                    </span>
+
+                    <h2>
+                        What is a
+                        <span>Muhurat?</span>
+                    </h2>
+
+                    <p>
+                        A Muhurat means a time that provides you with
+                        favorable results.
+                    </p>
+
+                </div>
+
+
+                <div class="muhurat-content-grid">
+
+                    <div class="muhurat-highlight">
+
+                        <div class="highlight-icon">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+
+                        <h3>
+                            Every Moment
+                            Has Its Significance.
+                        </h3>
+
+                        <p>
+                            Every day has auspicious and inauspicious
+                            periods. Different Muhurats are determined
+                            for different tasks and different people.
+                        </p>
+
+                    </div>
+
+
+                    <div class="muhurat-copy">
+
+                        <p>
+                            Some times may be auspicious for one person
+                            but inauspicious for another. Each person is
+                            different, so the Muhurat for each individual
+                            is also different.
+                        </p>
+
+                        <p>
+                            There is a separate Muhurat for every task.
+                            Muhurats for buying a vehicle, starting a
+                            business, beginning house construction,
+                            laying a foundation or entering a new house
+                            can all be different.
+                        </p>
+
+                        <p>
+                            To determine the Muhurat, astrologers study
+                            planetary positions and constellations,
+                            understand Rahukaal and calculate the
+                            auspicious moment according to the individual.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="muhurat-features">
+
+                    <div class="mini-feature">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Planetary Positions</span>
+                    </div>
+
+                    <div class="mini-feature">
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Constellations</span>
+                    </div>
+
+                    <div class="mini-feature">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Right Timing</span>
+                    </div>
+
+                    <div class="mini-feature">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Individual Calculation</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ABOUT US
+        ========================================== -->
+        <section class="section about-section">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-visual">
+
+                        <div class="about-image-wrapper">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=1000&q=85"
+                                alt="Traditional astrology and spiritual consultation"
+                                loading="lazy"
+                            >
+
+                            <div class="experience-badge">
+                                <strong>25+</strong>
+                                <span>Years of<br>Experience</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <span class="section-kicker">
+                            ABOUT US
+                        </span>
+
+                        <h2>
+                            Experience,
+                            <span>Authenticity</span>
+                            & Dedication.
+                        </h2>
+
+                        <p class="lead-text">
+                            Astro Muhurat is a prestigious organization
+                            where auspicious moments are determined by
+                            experienced and renowned astrologers.
+                        </p>
+
+                        <p>
+                            Our team consists of individuals with over
+                            25 years of experience, working together to
+                            determine specific Muhurats for different
+                            individuals and tasks.
+                        </p>
+
+                        <p>
+                            Our goal is to provide Muhurats to everyone
+                            in a simple manner and at the lowest possible
+                            cost.
+                        </p>
+
+                        <p>
+                            50 astrologers work day and night at our
+                            institution, and we have successfully served
+                            thousands of people. We want everyone to fully
+                            benefit from the science of astrology.
+                        </p>
+
+                        <div class="about-points">
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Experienced Astrologers</span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Personalized Calculations</span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Simple Consultation Process</span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                <span>Accessible & Affordable</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SERVICES
+        ========================================== -->
+        <section class="section services-section" id="services">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        OUR SERVICES
+                    </span>
+
+                    <h2>
+                        Muhurat for
+                        <span>Life's Important Moments.</span>
+                    </h2>
+
+                    <p>
+                        Personalized guidance for important beginnings,
+                        milestones and decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- Vehicle Booking -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <span class="service-number">01</span>
+
+                        <h3>Vehicle Booking Muhurat</h3>
+
+                        <p>
+                            When you book a vehicle, choosing an auspicious
+                            time can make the beginning more meaningful.
+                            Therefore, always consider the right Muhurat
+                            while booking a vehicle.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Vehicle Booking Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Vehicle Purchase -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+
+                        <span class="service-number">02</span>
+
+                        <h3>Vehicle Purchase Muhurat</h3>
+
+                        <p>
+                            A special Muhurat for purchasing a vehicle,
+                            determined by an expert astrologer according
+                            to your name or date and time of birth.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Vehicle Purchase Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Business -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                        <span class="service-number">03</span>
+
+                        <h3>Business Commencement Muhurat</h3>
+
+                        <p>
+                            A special Muhurat to start a new business,
+                            determined according to your birth details
+                            by an expert astrologer.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Business Commencement Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- House Construction -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+
+                        <span class="service-number">04</span>
+
+                        <h3>House Construction Muhurat</h3>
+
+                        <p>
+                            A special Muhurat dedicated to beginning
+                            house construction, calculated by a
+                            professional astrologer.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="House Construction Commencement Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- C Section -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+
+                        <span class="service-number">05</span>
+
+                        <h3>C-Section Birth Muhurat</h3>
+
+                        <p>
+                            An astrologer calculates an auspicious time
+                            for a C-section birth based on astrological
+                            considerations.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="C-Section Birth Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Marriage -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+
+                        <span class="service-number">06</span>
+
+                        <h3>Marriage Muhurat</h3>
+
+                        <p>
+                            Marriage compatibility and an auspicious
+                            time are determined after studying the
+                            planetary positions and horoscopes.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Marriage Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Gemstone -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+
+                        <span class="service-number">07</span>
+
+                        <h3>Gemstone Consultation</h3>
+
+                        <p>
+                            Astrological guidance to identify gemstones
+                            that may be suitable based on your birth
+                            chart and astrological details.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Gemstone Consultation"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Color -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <span class="service-number">08</span>
+
+                        <h3>Color Consultation</h3>
+
+                        <p>
+                            Guidance on favorable colors based on
+                            astrological details, zodiac sign and
+                            planetary considerations.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Color Consultation"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Workshop -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <span class="service-number">09</span>
+
+                        <h3>Workshop Commencement Muhurat</h3>
+
+                        <p>
+                            Choose a personalized auspicious time for
+                            starting a new workshop or important
+                            operational beginning.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Workshop Commencement Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Factory -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+
+                        <span class="service-number">10</span>
+
+                        <h3>Factory Commencement Muhurat</h3>
+
+                        <p>
+                            Personalized Muhurat for beginning a new
+                            factory or significant industrial activity.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Factory Commencement Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- House Warming -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-door-open"></i>
+                        </div>
+
+                        <span class="service-number">11</span>
+
+                        <h3>House Warming Muhurat</h3>
+
+                        <p>
+                            Find an auspicious time for entering and
+                            beginning life in your new home.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="House Warming Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Showroom -->
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+
+                        <span class="service-number">12</span>
+
+                        <h3>Showroom Opening Muhurat</h3>
+
+                        <p>
+                            Choose an auspicious time for opening your
+                            showroom and beginning a new commercial
+                            journey.
+                        </p>
+
+                        <button
+                            class="service-link"
+                            data-service="Showroom Opening Muhurat"
+                        >
+                            Enquire Now
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             COLOR CONSULTATION
+        ========================================== -->
+        <section class="section color-section">
+
+            <div class="container">
+
+                <div class="color-consultation">
+
+                    <div class="color-content">
+
+                        <span class="section-kicker">
+                            SPECIAL CONSULTATION
+                        </span>
+
+                        <h2>
+                            शुभ रंग
+                            <span>परामर्श</span>
+                        </h2>
+
+                        <p>
+                            रंगों का बहुत महत्व है। कोई रंग किसी के लिए
+                            शुभ हो सकता है और किसी के लिए अशुभ हो सकता है।
+                        </p>
+
+                        <p>
+                            ज्योतिष आपकी राशि, नाम और ग्रहों के विवरण के
+                            अनुसार यह निर्धारित करता है कि आपके लिए
+                            कौन-सा रंग शुभदायक और शुभ फलदाई है।
+                        </p>
+
+                        <p>
+                            खासतौर पर रंगों का महत्व तब और बढ़ जाता है,
+                            जब कोई वाहन खरीदते हैं। आपके लिए अनुकूल रंग
+                            उस वाहन के अनुभव को सकारात्मक बना सकता है।
+                        </p>
+
+                        <button
+                            class="btn btn-primary"
+                            data-service="Color Consultation"
+                        >
+                            Get Color Consultation
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="color-wheel">
+
+                        <div class="color-wheel-inner">
+                            <span>शुभ</span>
+                            <strong>रंग</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONSULTATION FORM
+        ========================================== -->
+        <section class="section consultation-section" id="consultation">
+
+            <div class="container">
+
+                <div class="consultation-grid">
+
+
+                    <div class="consultation-info">
+
+                        <span class="section-kicker">
+                            START YOUR JOURNEY
+                        </span>
+
+                        <h2>
+                            Find Your
+                            <span>Auspicious Moment.</span>
+                        </h2>
+
+                        <p>
+                            Share a few details with us and our team will
+                            help you with the appropriate Muhurat for your
+                            requirement.
+                        </p>
+
+
+                        <div class="consultation-benefits">
+
+                            <div>
+                                <i class="fa-solid fa-user-check"></i>
+                                <span>Personalized Guidance</span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <span>Experienced Astrologers</span>
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Easy Phone Consultation</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="consultation-form-wrapper">
+
+                        <form id="consultationForm" class="consultation-form">
+
+                            <div class="form-header">
+                                <span>CONSULTATION REQUEST</span>
+                                <h3>Tell Us What You Need</h3>
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Enter phone number"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="service">
+                                    Select Service
+                                </label>
+
+                                <select
+                                    id="service"
+                                    name="service"
+                                    required
+                                >
+
+                                    <option value="" selected disabled>
+                                        Choose a service
+                                    </option>
+
+                                    <option value="Vehicle Booking Muhurat">
+                                        Vehicle Booking Muhurat
+                                    </option>
+
+                                    <option value="Vehicle Purchase Muhurat">
+                                        Vehicle Purchase Muhurat
+                                    </option>
+
+                                    <option value="Business Commencement Muhurat">
+                                        Business Commencement Muhurat
+                                    </option>
+
+                                    <option value="Workshop Commencement Muhurat">
+                                        Workshop Commencement Muhurat
+                                    </option>
+
+                                    <option value="Factory Commencement Muhurat">
+                                        Factory Commencement Muhurat
+                                    </option>
+
+                                    <option value="House Construction Commencement Muhurat">
+                                        House Construction Commencement Muhurat
+                                    </option>
+
+                                    <option value="House Warming Muhurat">
+                                        House Warming Muhurat
+                                    </option>
+
+                                    <option value="C-Section Birth Muhurat">
+                                        C-Section Birth Muhurat
+                                    </option>
+
+                                    <option value="Marriage Muhurat">
+                                        Marriage Muhurat
+                                    </option>
+
+                                    <option value="Gemstone Consultation">
+                                        Gemstone Consultation
+                                    </option>
+
+                                    <option value="Color Consultation">
+                                        Color Consultation
+                                    </option>
+
+                                    <option value="Showroom Opening Muhurat">
+                                        Showroom Opening Muhurat
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="birthDate">
+                                        Date of Birth
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="birthDate"
+                                        name="birthDate"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="birthTime">
+                                        Birth Time
+                                    </label>
+
+                                    <input
+                                        type="time"
+                                        id="birthTime"
+                                        name="birthTime"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Additional Details
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    placeholder="Tell us briefly about your requirement..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary form-submit"
+                            >
+                                Submit Consultation Request
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+
+                            <p class="form-note">
+                                Your details are used only for consultation
+                                purposes.
+                            </p>
+
+                            <div
+                                class="form-success"
+                                id="formSuccess"
+                                aria-live="polite"
+                            >
+                                <i class="fa-solid fa-circle-check"></i>
+                                Thank you. Your consultation request has
+                                been received.
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             PAYMENT / QR
+        ========================================== -->
+        <section class="section payment-section">
+
+            <div class="container">
+
+                <div class="payment-card">
+
+                    <div class="payment-content">
+
+                        <span class="section-kicker">
+                            CONSULTATION PAYMENT
+                        </span>
+
+                        <h2>
+                            Complete Your
+                            <span>Payment</span>
+                        </h2>
+
+                        <p>
+                            Scan the QR code to complete your consultation
+                            payment.
+                        </p>
+
+                        <div class="payment-note">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Secure & Easy Payment
+                        </div>
+
+                    </div>
+
+
+                    <!-- QR IMAGE PLACEHOLDER
+                         Replace this div with your QR image later.
+                    -->
+                    <div class="qr-placeholder">
+
+                        <div class="qr-inner">
+                            
+                            <img src="assets/qrcode.jpeg" alt="qrcode">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONTACT
+        ========================================== -->
+        <section class="section contact-section" id="contact">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        GET IN TOUCH
+                    </span>
+
+                    <h2>
+                        We Are Here
+                        <span>For You.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- Phone -->
+                    <a href="tel:+919098135131" class="contact-card">
+
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <span>Call Us</span>
+
+                        <strong>9098135131</strong>
+
+                        <small>Jio</small>
+
+                    </a>
+
+
+                    <a href="tel:+917647925131" class="contact-card">
+
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <span>Call Us</span>
+
+                        <strong>7647925131</strong>
+
+                        <small>BSNL</small>
+
+                    </a>
+
+
+                    <!-- WhatsApp -->
+                    <a
+                        href="https://wa.me/919098135131"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                    >
+
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+                        <span>WhatsApp</span>
+
+                        <strong>9098135131</strong>
+
+                        <small>Chat with us</small>
+
+                    </a>
+
+
+                    <!-- Email -->
+                    <a
+                        href="mailto:astromuhurat11@gmail.com"
+                        class="contact-card"
+                    >
+
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <span>Email Us</span>
+
+                        <strong>astromuhurat11@gmail.com</strong>
+
+                        <small>Send an enquiry</small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             OFFICES
+        ========================================== -->
+        <section class="section offices-section">
+
+            <div class="container">
+
+                <div class="offices-grid">
+
+
+                    <div class="office-card">
+
+                        <div class="office-top">
+
+                            <div class="office-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <span>HEAD OFFICE</span>
+
+                        </div>
+
+                        <h3>Mumbai</h3>
+
+                        <p>
+                            39th Floor, Lodha Primo Building,<br>
+                            Close to ITC Grand Central,<br>
+                            E, Dr Ernest Borges Rd, Parel East,<br>
+                            Parel, Mumbai, Maharashtra 400012
+                        </p>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Lodha+Primo+Parel+Mumbai"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="office-link"
+                        >
+                            View Location
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="office-card">
+
+                        <div class="office-top">
+
+                            <div class="office-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <span>ZONAL OFFICE</span>
+
+                        </div>
+
+                        <h3>Raipur</h3>
+
+                        <p>
+                            H404, Palm Bellagio,<br>
+                            Shanker Nagar,<br>
+                            Raipur, Chhattisgarh
+                        </p>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Palm+Bellagio+Shankar+Nagar+Raipur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="office-link"
+                        >
+                            View Location
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             SOCIAL CTA
+        ========================================== -->
+        <section class="social-section">
+
+            <div class="container">
+
+                <div class="social-content">
+
+                    <span class="section-kicker">
+                        CONNECT WITH ASTRO MUHURAT
+                    </span>
+
+                    <h2>
+                        Follow Our
+                        <span>Journey.</span>
+                    </h2>
+
+                    <p>
+                        Stay connected with Astro Muhurat and discover
+                        more about Muhurat, astrology and auspicious
+                        beginnings.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a
+                            href="https://www.youtube.com/@Astromuhurat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Astro Muhurat YouTube"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                            YouTube
+                        </a>
+
+
+                        <a
+                            href="https://www.instagram.com/astromuhurat_/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Astro Muhurat Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                            Instagram
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="brand">
+
+                        <span class="brand-symbol">ॐ</span>
+
+                        <span class="brand-text">
+                            <strong>Astro</strong>
+                            <span>Muhurat</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Personalized auspicious moments for life's
+                        important beginnings.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Quick Links</h4>
+
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#muhurat">What is Muhurat?</a>
+                    <a href="#services">Services</a>
+                    <a href="#consultation">Consultation</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Services</h4>
+
+                    <a href="#services">Vehicle Muhurat</a>
+                    <a href="#services">Business Muhurat</a>
+                    <a href="#services">Marriage Muhurat</a>
+                    <a href="#services">House Muhurat</a>
+                    <a href="#services">Gemstone Consultation</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Contact</h4>
+
+                    <a href="tel:+919098135131">
+                        9098135131
+                    </a>
+
+                    <a href="tel:+917647925131">
+                        7647925131
+                    </a>
+
+                    <a href="mailto:astromuhurat11@gmail.com">
+                        astromuhurat11@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    Astro Muhurat. All Rights Reserved.
+                </p>
+
+
+                <div class="footer-socials">
+
+                    <a
+                        href="https://www.youtube.com/@Astromuhurat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/astromuhurat_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://wa.me/919098135131"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         FLOATING WHATSAPP
+    ========================================== -->
+    <a
+        href="https://wa.me/919098135131"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-whatsapp"
+        aria-label="Chat on WhatsApp"
+    >
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Chat with us</span>
+    </a>
+
+
+
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+
+    <!-- =========================================
+         SERVICE MODAL
+    ========================================== -->
+    <div class="service-modal" id="serviceModal">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close modal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <span class="section-kicker">
+                ASTRO MUHURAT
+            </span>
+
+            <h3 id="modalServiceName">
+                Service
+            </h3>
+
+            <p>
+                Get personalized guidance for your selected service.
+                Fill in your details and our team will assist you.
+            </p>
+
+            <button
+                class="btn btn-primary"
+                id="modalContinue"
+            >
+                Continue to Form
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>
