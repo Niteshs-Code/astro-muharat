@@ -3159,3 +3159,240 @@ button {
     }
 
 }
+
+
+/* =========================================
+   SERVICE CHARGES
+========================================= */
+
+.service-charges-section {
+    position: relative;
+    background: var(--maroon-900);
+}
+
+.charges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.charge-card {
+    position: relative;
+    padding: 34px 28px;
+    text-align: center;
+    background: linear-gradient(
+        145deg,
+        rgba(104, 22, 36, 0.65),
+        rgba(45, 10, 17, 0.95)
+    );
+    border: 1px solid rgba(220, 182, 90, 0.25);
+    border-radius: 18px;
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.charge-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: var(--gold-400);
+    opacity: 0.7;
+}
+
+.charge-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(220, 182, 90, 0.55);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.charge-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(220, 182, 90, 0.4);
+    border-radius: 50%;
+    color: var(--gold-300);
+    font-size: 21px;
+}
+
+.charge-card h3 {
+    margin-bottom: 18px;
+    color: var(--gold-100);
+    font-family: "Cinzel", serif;
+    font-size: 19px;
+}
+
+.charge-price {
+    margin-bottom: 14px;
+    color: var(--gold-300);
+    font-family: "Cinzel", serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.charge-price span {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.charge-card p {
+    margin: 0;
+    color: rgba(255, 246, 216, 0.72);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.charges-note {
+    max-width: 850px;
+    margin: 35px auto 0;
+    padding: 20px 25px;
+    text-align: center;
+    border: 1px solid rgba(220, 182, 90, 0.2);
+    border-radius: 12px;
+    background: rgba(33, 8, 13, 0.45);
+}
+
+.charges-note p {
+    margin: 0;
+    color: rgba(255, 246, 216, 0.75);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SERVICE CARD FEE
+========================================= */
+
+.service-fee {
+    margin: 18px 0 15px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(220, 182, 90, 0.18);
+    color: var(--gold-300);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.service-fee span {
+    color: rgba(255, 246, 216, 0.65);
+    font-weight: 500;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .charges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .charges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charge-card {
+        padding: 28px 22px;
+    }
+
+    .charge-price {
+        font-size: 28px;
+    }
+}
+
+/* =========================================
+   FOOTER IMAGE SECTION
+========================================= */
+
+.footer-image-section {
+    position: relative;
+    padding: 45px 0 55px;
+    background: var(--maroon-950);
+}
+
+.footer-image-frame {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(220, 182, 90, 0.55);
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(220, 182, 90, 0.18),
+        rgba(45, 10, 17, 0.7),
+        rgba(220, 182, 90, 0.12)
+    );
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(201, 156, 60, 0.08);
+    overflow: hidden;
+}
+
+.footer-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 246, 216, 0.08);
+    pointer-events: none;
+}
+
+.footer-image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .footer-image-section {
+        padding: 32px 0 40px;
+    }
+
+    .footer-image-frame {
+        padding: 6px;
+        border-radius: 18px;
+    }
+
+    .footer-image-frame img {
+        border-radius: 13px;
+        max-height: 400px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer-image-section {
+        padding: 25px 0 32px;
+    }
+
+    .footer-image-frame {
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .footer-image-frame img {
+        border-radius: 10px;
+    }
+
+}
