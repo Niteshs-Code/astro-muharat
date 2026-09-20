@@ -772,7 +772,7 @@ ${messageValue ? `Additional Details: ${messageValue}` : ""}`;
 
 
             const whatsappURL =
-                "https://wa.me/919098135131?text=" +
+                "https://wa.me/917647925131?text=" +
                 encodeURIComponent(
                     whatsappMessage
                 );
@@ -826,7 +826,7 @@ ${messageValue ? `Additional Details: ${messageValue}` : ""}`;
 
     document
         .querySelectorAll(
-            '[data-phone="9098135131"]'
+            '[data-phone="7647925131"]'
         )
         .forEach(element => {
 
@@ -835,7 +835,7 @@ ${messageValue ? `Additional Details: ${messageValue}` : ""}`;
                 () => {
 
                     window.location.href =
-                        "tel:+919098135131";
+                        "tel:+917647925131";
 
                 }
             );
