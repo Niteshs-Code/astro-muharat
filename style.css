@@ -3396,3 +3396,45 @@ button {
     }
 
 }
+
+/* --- Premium Golden Glow & Shimmer Effect for Price Cards --- */
+
+.charges-grid .charge-card {
+    background: linear-gradient(135deg, rgba(60, 10, 15, 0.9), rgba(40, 5, 8, 0.95)) !important;
+    border: 1.5px solid #d4af37 !important; /* Rich metallic golden border */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25), inset 0 0 10px rgba(212, 175, 55, 0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Hover karne par card aur jyada bright aur upar uthega */
+.charges-grid .charge-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #ffd700 !important; /* Bright Gold */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Price Number ko Royal Golden aur Shining Glow dene ke liye */
+.charges-grid .charge-price {
+    color: #ffd700 !important; /* Bright Gold Color */
+    font-weight: 800 !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Hover par price ka glow aur bhi tez ho jayega */
+.charges-grid .charge-card:hover .charge-price {
+    color: #ffea75 !important;
+    text-shadow: 0 0 15px rgba(255, 234, 117, 1), 0 0 25px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+/* Icons aur headings ko bhi thoda golden glow dene ke liye (Optional bonus) */
+.charges-grid .charge-card h3 {
+    color: #ffd700 !important;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.charges-grid .charge-icon {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    color: #ffd700 !important;
+}
