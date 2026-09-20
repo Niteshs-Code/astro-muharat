@@ -659,6 +659,11 @@ if (consultationForm) {
                     '[name="birthPlace"]'
                 );
 
+                const city =
+    consultationForm.querySelector(
+        '[name="city"]'
+    );
+
             const message =
                 consultationForm.querySelector(
                     '[name="message"]'
@@ -671,9 +676,7 @@ if (consultationForm) {
 
             if (
                 !name ||
-                !service ||
-                !birthDate ||
-                !birthPlace
+                !service 
             ) {
                 return;
             }
@@ -701,6 +704,11 @@ if (consultationForm) {
 
             const birthPlaceValue =
                 birthPlace.value.trim();
+                
+                const cityValue =
+    city ? city.value.trim() : "";
+
+                
 
             const messageValue =
                 message
@@ -722,15 +730,7 @@ if (consultationForm) {
                 return;
             }
 
-            if (!birthDateValue) {
-                birthDate.focus();
-                return;
-            }
-
-            if (!birthPlaceValue) {
-                birthPlace.focus();
-                return;
-            }
+            
 
 
             /* =========================================
@@ -768,6 +768,7 @@ Service: ${serviceValue}
 Date of Birth: ${birthDateValue}
 Birth Time: ${birthTimeValue || "Not provided"}
 Place of Birth: ${birthPlaceValue}
+City: ${cityValue || "Not provided"}
 ${messageValue ? `Additional Details: ${messageValue}` : ""}`;
 
 
