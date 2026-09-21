@@ -1009,6 +1009,30 @@ Showroom Opening Muhurat
         <span>CONSULTATION REQUEST</span>
         <h3>Tell Us What You Need</h3>
     </div>
+    <div style="
+    margin-bottom: 22px;
+    padding: 14px 18px;
+    border: 1px solid rgba(220, 182, 90, 0.35);
+    border-left: 3px solid #dcb65a;
+    border-radius: 10px;
+    background: rgba(220, 182, 90, 0.06);
+    color: #f9e7a8;
+    font-size: 14px;
+    line-height: 1.6;
+">
+    <strong style="
+        display: block;
+        margin-bottom: 4px;
+        color: #eecf78;
+        font-size: 15px;
+    ">
+        Please fill in the information you have.
+    </strong>
+
+    <span style="color: rgba(255, 246, 216, 0.75);">
+        You may leave any information you do not have blank.
+    </span>
+</div>
 
 
     <!-- Name & Phone -->
@@ -1030,6 +1054,15 @@ Showroom Opening Muhurat
 
         </div>
 
+ <div class="form-group">
+    <label for="city">City</label>
+    <input
+        type="text"
+        id="city"
+        name="city"
+        placeholder="Enter your city"
+    >
+</div>
 
         <div class="form-group">
 
@@ -1068,15 +1101,7 @@ Showroom Opening Muhurat
         >
 
     </div>
-    <div class="form-group">
-    <label for="city">City</label>
-    <input
-        type="text"
-        id="city"
-        name="city"
-        placeholder="Enter your city"
-    >
-</div>
+   
 
 
     <!-- Service -->
@@ -1269,51 +1294,61 @@ Showroom Opening Muhurat
         ========================================== -->
         <section class="section payment-section">
 
-            <div class="container">
+    <div class="container">
 
-                <div class="payment-card">
+        <div class="payment-card">
 
-                    <div class="payment-content">
+            <div class="payment-content">
 
-                        <span class="section-kicker">
-                            CONSULTATION PAYMENT
-                        </span>
+                <span class="section-kicker">
+                    CONSULTATION PAYMENT
+                </span>
 
-                        <h2>
-                            Complete Your
-                            <span>Payment</span>
-                        </h2>
+                <h2>
+                    Complete Your
+                    <span>Payment</span>
+                </h2>
 
-                        <p>
-                            Scan the QR code to complete your consultation
-                            payment.
-                        </p>
+                <p>
+                    Scan the QR code to complete your consultation
+                    payment, or pay directly using UPI.
+                </p>
 
-                        <div class="payment-note">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            Secure & Easy Payment
-                        </div>
+                <div class="payment-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure & Easy Payment
+                </div>
 
-                    </div>
+                <!-- Pay Now Button -->
+                <a
+                    href="upi://pay?pa=5S31R25896@mairtel&pn=Astro%20Muhurat&cu=INR"
+                    class="payment-button"
+                >
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    Pay Now with UPI
+                </a>
+
+            </div>
 
 
-                    <!-- QR IMAGE PLACEHOLDER
-                         Replace this div with your QR image later.
-                    -->
-                    <div class="qr-placeholder">
+            <div class="qr-placeholder">
 
-                        <div class="qr-inner">
-                            
-                            <img src="assets/qrcode.jpeg" alt="qrcode">
-                        </div>
+                <div class="qr-inner">
 
-                    </div>
+                    <img
+                        src="assets/qrcode.jpeg"
+                        alt="Astro Muhurat UPI Payment QR Code"
+                    >
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
 

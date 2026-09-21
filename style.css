@@ -3438,3 +3438,32 @@ button {
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     color: #ffd700 !important;
 }
+
+.payment-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 22px;
+    padding: 13px 24px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #dcb65a,
+        #a97b25
+    );
+
+    color: #21080d;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.payment-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 182, 90, 0.25);
+}
