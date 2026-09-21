@@ -1292,7 +1292,7 @@ Showroom Opening Muhurat
         <!-- =========================================
              PAYMENT / QR
         ========================================== -->
-        <section class="section payment-section">
+      <section class="section payment-section">
 
     <div class="container">
 
@@ -1311,7 +1311,7 @@ Showroom Opening Muhurat
 
                 <p>
                     Scan the QR code to complete your consultation
-                    payment, or pay directly using UPI.
+                    payment, or use the UPI ID below.
                 </p>
 
                 <div class="payment-note">
@@ -1319,14 +1319,67 @@ Showroom Opening Muhurat
                     Secure & Easy Payment
                 </div>
 
-                <!-- Pay Now Button -->
-                <a
-                    href="upi://pay?pa=5S31R25896@mairtel&pn=Astro%20Muhurat&cu=INR"
-                    class="payment-button"
-                >
-                    <i class="fa-solid fa-indian-rupee-sign"></i>
-                    Pay Now with UPI
-                </a>
+                <!-- UPI ID -->
+                <div class="upi-payment-info">
+
+                    <span class="upi-label">
+                        UPI ID
+                    </span>
+
+                    <div class="upi-id-box">
+                        <span id="upiId">
+                            5S31R25896@mairtel
+                        </span>
+
+                        <button
+                            type="button"
+                            class="payment-button"
+                            id="copyUpiBtn"
+                        >
+                            <i class="fa-regular fa-copy"></i>
+                            Copy UPI ID
+                        </button>
+
+
+                        
+                    </div>
+
+                </div>
+
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+
+                    <h3>
+                        How to Pay
+                    </h3>
+
+                    <ol>
+                        <li>
+                            Tap <strong>Copy UPI ID</strong>.
+                        </li>
+
+                        <li>
+                            Open your preferred UPI app such as
+                            <strong>PhonePe, Google Pay, Paytm</strong>
+                            or any other UPI app.
+                        </li>
+
+                        <li>
+                            Select the option to pay using a
+                            <strong>UPI ID</strong>.
+                        </li>
+
+                        <li>
+                            Paste the copied UPI ID.
+                        </li>
+
+                        <li>
+                            Enter the applicable consultation amount
+                            and complete the payment.
+                        </li>
+                    </ol>
+
+                </div>
 
             </div>
 
@@ -1339,6 +1392,14 @@ Showroom Opening Muhurat
                         src="assets/qrcode.jpeg"
                         alt="Astro Muhurat UPI Payment QR Code"
                     >
+
+                    <p class="qr-upi-id">
+                        5S31R25896@mairtel
+                    </p>
+
+                    <small>
+                        Scan using another device to pay
+                    </small>
 
                 </div>
 

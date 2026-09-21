@@ -65,6 +65,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
+
+    const copyUpiBtn = document.getElementById("copyUpiBtn");
+const upiId = document.getElementById("upiId");
+
+if (copyUpiBtn && upiId) {
+
+    copyUpiBtn.addEventListener("click", async () => {
+
+        const upiValue = upiId.textContent.trim();
+
+        try {
+
+            await navigator.clipboard.writeText(upiValue);
+
+            copyUpiBtn.innerHTML =
+                '<i class="fa-solid fa-check"></i> Copied';
+
+            setTimeout(() => {
+
+                copyUpiBtn.innerHTML =
+                    '<i class="fa-regular fa-copy"></i> Copy UPI ID';
+
+            }, 2000);
+
+        } catch (error) {
+
+            alert("Please copy the UPI ID manually: " + upiValue);
+
+        }
+
+    });
+
+}
+
     /* =====================================================
        STICKY HEADER
     ===================================================== */
