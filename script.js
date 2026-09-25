@@ -2,12 +2,72 @@
    ASTRO MUHURAT
    Main JavaScript
 ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById('bg-audio');
+    const audioBtn = document.getElementById('audio-btn');
+
+    if (audio && audioBtn) {
+        // Page load hone par play karne ki koshish
+        audio.play().then(() => {
+            audioBtn.classList.add('playing');
+        }).catch(() => {
+            audioBtn.classList.remove('playing');
+        });
+
+        // Click karne par Audio ON/OFF aur Animation toggle ho
+        audioBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                audioBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                audioBtn.classList.remove('playing');
+            }
+        });
+
+        // Agar browser autoplay block kare aur user kahin bhi click kare toh audio chal pade
+        document.addEventListener('click', () => {
+            if (audio.paused && audio.currentTime === 0) {
+                audio.play().then(() => {
+                    audioBtn.classList.add('playing');
+                }).catch(e => console.log(e));
+            }
+        }, { once: true });
+    }
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+
+
+    //  audio part
+
+
+
+    const audio = document.getElementById('bg-audio');
+
+window.addEventListener('DOMContentLoaded', () => {
+    audio.play().catch(() => {});
+});
+
+document.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+    }
+}, { once: true });
+
+
+
+
 
     /* =====================================================
        ELEMENTS
     ===================================================== */
+
+
+
 
     const body = document.body;
 
