@@ -7,15 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const audioBtn = document.getElementById('audio-btn');
 
     if (audio && audioBtn) {
-        // Page load hone par play karne ki koshish
+        // 1. Page load hote hi automatic play karne ki koshish
         audio.play().then(() => {
             audioBtn.classList.add('playing');
         }).catch(() => {
+            // Agar browser ne autoplay block kiya toh animation hata do
             audioBtn.classList.remove('playing');
         });
 
-        // Click karne par Audio ON/OFF aur Animation toggle ho
-        audioBtn.addEventListener('click', () => {
+        // 2. Audio button par single click karne se direct ON/OFF (Toggle) ho
+        audioBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Event bubbling roknのために
             if (audio.paused) {
                 audio.play();
                 audioBtn.classList.add('playing');
@@ -25,38 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Agar browser autoplay block kare aur user kahin bhi click kare toh audio chal pade
-        document.addEventListener('click', () => {
+        // 3. Fallback: Agar browser ne autoplay block kiya hai, toh user page par kahin bhi pehli baar click karega toh audio chal pdega
+        const handleFirstClick = () => {
             if (audio.paused && audio.currentTime === 0) {
                 audio.play().then(() => {
                     audioBtn.classList.add('playing');
-                }).catch(e => console.log(e));
+                }).catch(err => console.log(err));
             }
-        }, { once: true });
+            document.removeEventListener('click', handleFirstClick);
+        };
+
+        document.addEventListener('click', handleFirstClick);
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
-
-
-    //  audio part
-
-
-
-    const audio = document.getElementById('bg-audio');
-
-window.addEventListener('DOMContentLoaded', () => {
-    audio.play().catch(() => {});
-});
-
-document.addEventListener('click', () => {
-    if (audio.paused) {
-        audio.play();
-    }
-}, { once: true });
 
 
 
