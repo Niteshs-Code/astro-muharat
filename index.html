@@ -108,10 +108,17 @@
 <audio id="bg-audio" src="assets/audio.mp3" loop></audio>
 
 <div id="audio-btn" class="audio-wave-container" title="Toggle Audio">
-    <div class="wave-bar"></div>
-    <div class="wave-bar"></div>
-    <div class="wave-bar"></div>
-    <div class="wave-bar"></div>
+    <!-- Speaker SVG Icon (Phone style) -->
+    <svg class="speaker-icon" viewBox="0 0 24 24" fill="currentColor">
+        <!-- Speaker Body -->
+        <path d="M3 9v6h4l5 5V4L7 9H3z"/>
+        <!-- Sound Wave 1 (Sirf tab dikhegi jab audio play ho rahi ho) -->
+        <path class="wave-line wave-1" d="M16.5 7.5c1.1 1.1 1.8 2.6 1.8 4.5s-.7 3.4-1.8 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <!-- Sound Wave 2 -->
+        <path class="wave-line wave-2" d="M19.5 4.5c1.8 1.8 3 4.3 3 7.5s-1.2 5.7-3 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <!-- Mute/Slash Line (Jab audio band ho tab dikhegi) -->
+        <line class="mute-slash" x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
 </div>
 
 

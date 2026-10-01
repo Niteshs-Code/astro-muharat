@@ -7,18 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const audioBtn = document.getElementById('audio-btn');
 
     if (audio && audioBtn) {
-        // 1. Page load hote hi automatic play karne ki koshish
+        // 1. Page load par mute karke play karne ki koshish
+        audio.muted = true;
         audio.play().then(() => {
             audioBtn.classList.add('playing');
-        }).catch(() => {
-            // Agar browser ne autoplay block kiya toh animation hata do
+        }).catch((err) => {
+            console.log("Autoplay blocked:", err);
             audioBtn.classList.remove('playing');
         });
 
-        // 2. Audio button par single click karne se direct ON/OFF (Toggle) ho
+        // 2. Button click par toggle (ON/OFF)
         audioBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Event bubbling roknのために
-            if (audio.paused) {
+            e.stopPropagation();
+            if (audio.paused || audio.muted) {
+                audio.muted = false;
                 audio.play();
                 audioBtn.classList.add('playing');
             } else {
@@ -27,17 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // 3. Fallback: Agar browser ne autoplay block kiya hai, toh user page par kahin bhi pehli baar click karega toh audio chal pdega
-        const handleFirstClick = () => {
-            if (audio.paused && audio.currentTime === 0) {
+        // 3. First Interaction Fallback (Click, Touch, ya Keypress par audio unmute hokar chal padegi)
+        const handleFirstInteraction = () => {
+            if (audio.muted || audio.paused) {
+                audio.muted = false;
                 audio.play().then(() => {
                     audioBtn.classList.add('playing');
-                }).catch(err => console.log(err));
+                }).catch(err => console.log("Play blocked:", err));
             }
-            document.removeEventListener('click', handleFirstClick);
+            
+            // Ek baar chalne ke baad saare listeners hata do
+            window.removeEventListener('click', handleFirstInteraction);
+            window.removeEventListener('touchstart', handleFirstInteraction);
+            window.removeEventListener('pointerdown', handleFirstInteraction);
         };
 
-        document.addEventListener('click', handleFirstClick);
+        // Page par kahin bhi pehla touch ya click hone par trigger hoga
+        window.addEventListener('click', handleFirstInteraction);
+        window.addEventListener('touchstart', handleFirstInteraction);
+        window.addEventListener('pointerdown', handleFirstInteraction);
     }
 });
 
